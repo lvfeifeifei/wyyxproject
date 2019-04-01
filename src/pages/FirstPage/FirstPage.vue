@@ -905,13 +905,14 @@
       NoTitleList
     },
     methods: {
+      
       toggole () {
         this.is_open = !this.is_open
       }
     },
-    async mounted () {
-      let result = await reqHomeData()
-      console.log(result)
+    mounted () {
+      this.$store.dispatch('getHomeData')
+      
       new BScroll('.left',{
         scrollX: true,
         click:true
