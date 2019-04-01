@@ -41,5 +41,9 @@ export default [
   {
     path: '/personal',
     component: Personal
+  },
+  {
+    path: '/',
+    redirect:'/firstpage'
   }
 ]

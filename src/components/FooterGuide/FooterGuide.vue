@@ -50,8 +50,8 @@
     display flex
     width 100%
     height 98px
-    background pink
     justify-content space-around
+    background white
     .footer_item
       display flex
       flex-direction column

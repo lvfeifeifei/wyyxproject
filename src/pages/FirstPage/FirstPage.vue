@@ -893,6 +893,7 @@
   import BScroll from 'better-scroll'
   
   import NoTitleList from '../../components/NoTitleList/NoTitleList.vue'
+  import {reqHomeData} from '../../api'
   
   export default {
     data () {
@@ -908,7 +909,9 @@
         this.is_open = !this.is_open
       }
     },
-    mounted () {
+    async mounted () {
+      let result = await reqHomeData()
+      console.log(result)
       new BScroll('.left',{
         scrollX: true,
         click:true
