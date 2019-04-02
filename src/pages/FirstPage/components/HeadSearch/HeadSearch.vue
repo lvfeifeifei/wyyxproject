@@ -9,7 +9,7 @@
         <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-553dba3aff.png" alt="">
         <span>搜索商品，共22110款好物</span>
       </div>
-      <div class="login">登录</div>
+      <div class="login" @click="$router.replace('/personal')">登录</div>
     </header>
     <!--导航-->
     <div class="listNav">
@@ -35,15 +35,15 @@
           <span>全部频道</span>
         </div>
         <ul class="channelList">
-          <li class="active">推荐</li>
-          <li>居家生活</li>
-          <li>服饰鞋包</li>
-          <li>美食酒水</li>
-          <li>个户清洁</li>
-          <li>母婴亲子</li>
-          <li>运动旅行</li>
-          <li>数码家电</li>
-          <li>全球特色</li>
+          <li :class="{active: $route.path==='/firstpage/recommend'}" @click="goto('/firstpage/recommend')">推荐</li>
+          <li :class="{active: $route.path==='/firstpage/homeLife'}" @click="goto('/firstpage/homeLife')">居家生活</li>
+          <li :class="{active: $route.path==='/firstpage/shoespackage'}" @click="goto('/firstpage/shoespackage')">服饰鞋包</li>
+          <li :class="{active: $route.path==='/firstpage/foodbeverage'}" @click="goto('/firstpage/foodbeverage')">美食酒水</li>
+          <li :class="{active: $route.path==='/firstpage/houseclean'}" @click="goto('/firstpage/houseclean')">个户清洁</li>
+          <li :class="{active: $route.path==='/firstpage/childparent'}" @click="goto('/firstpage/childparent')">母婴亲子</li>
+          <li :class="{active: $route.path==='/firstpage/sportstravel'}" @click="goto('/firstpage/sportstravel')">运动旅行</li>
+          <li :class="{active: $route.path==='/firstpage/elextrical'}" @click="goto('/firstpage/elextrical')">数码家电</li>
+          <li :class="{active: $route.path==='/firstpage/globalfeature'}" @click="goto('/firstpage/globalfeature')">全球特色</li>
         </ul>
       </div>
     </div>

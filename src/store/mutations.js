@@ -3,7 +3,8 @@
 */
 import {
   RECEIVE_HOMEDATA,
-  RECEIVE_REQCATEGORYDATA
+  RECEIVE_REQCATEGORYDATA,
+  RECEIVE_REQSEARCHLIST
 }from './mutation-types'
 
 export default {
@@ -13,5 +14,9 @@ export default {
   [RECEIVE_REQCATEGORYDATA](state,categoryData){
 
     state.categoryData = categoryData
+  },
+  [RECEIVE_REQSEARCHLIST](state,searchList){
+
+    state.searchList = searchList
   },
 }

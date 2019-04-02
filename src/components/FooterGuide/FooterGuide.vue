@@ -1,32 +1,32 @@
 <template>
   <footer class="footer_guide">
-    <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/firstpage'}" @click="goto('/firstpage')">
+    <a href="javascript:;" class="footer_item" :class="{on: $route.path.indexOf('/firstpage')===0}" @click="goto('/firstpage')">
       <span class="footer_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont  iconhome1"></i>
       </span>
       <span class="footer_title">首页</span>
     </a>
     <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/classify'}"  @click="goto('/classify')">
       <span class="footer_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont iconleimupinleifenleileibie"></i>
       </span>
       <span class="footer_title">分类</span>
     </a>
     <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/generalthings'}"  @click="goto('/generalthings')">
       <span class="footer_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont iconshiwu"></i>
       </span>
       <span class="footer_title">识物</span>
     </a>
     <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/shopcart'}"  @click="goto('/shopcart')">
       <span class="footer_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont icongouwuche"></i>
       </span>
       <span class="footer_title">购物车</span>
     </a>
     <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/personal'}"  @click="goto('/personal')">
       <span class="footer_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont iconuser"></i>
       </span>
       <span class="footer_title">个人</span>
     </a>

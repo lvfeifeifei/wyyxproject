@@ -44,9 +44,14 @@ export default {
       typeof callback === 'function' && callback()
     }
   },
-  
+
   async getSearchList ({commit}) {
     const result = await reqSearchList()
     console.log(result,'searchList()')
+    if(result.code==='200'){
+      console.log('searchList数据请求成功')
+      const searchList = result.data
+      commit(RECEIVE_REQSEARCHLIST,searchList)
+    }
   }
 }

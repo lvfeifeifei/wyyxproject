@@ -4,10 +4,10 @@
  */
 import ajax from './ajax'
 
-
+const BASE = '/api'
 export const reqHomeData = () => ajax('/home')
 
 export const reqCategoryData = () => ajax('/category')
 export const reqCategoryListData = () => ajax('/category/list')
 //获取分类页面search列表数据
-export const reqSearchList = () => ajax('http://m.you.163.com/xhr/search/init.json')
+export const reqSearchList = () => ajax(BASE+"/xhr/search/init.json",)

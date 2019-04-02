@@ -18,7 +18,10 @@ import HouseClean from '../pages/FirstPage/HouseClean/HouseClean.vue'
 import ShoesPackage from '../pages/FirstPage/ShoesPackage/ShoesPackage.vue'
 import SportsTravel from '../pages/FirstPage/SportsTravel/SportsTravel.vue'
 import SearchGoods from '../pages/Classify/SearchGoods/SearchGoods.vue'
-
+import PhoneLogin from '../pages/PhoneLogin/PhoneLogin.vue'
+import PwdLogin from '../pages/PwdLogin/PwdLogin.vue'
+import Discover from '../pages/GeneralThings/Discover/Discover.vue'
+import Selection from '../pages/GeneralThings/Selection/Selection.vue'
 export default [
   {
     path: '/firstpage',
@@ -98,6 +101,11 @@ export default [
         },
 
       },
+      {
+        path: '/firstpage',
+        redirect:'/firstpage/recommend'
+      },
+
     ]
   },
   {
@@ -105,7 +113,7 @@ export default [
     component: Classify,
     meta: {
       showFooter: true
-    },
+    }
   },
   {
     path:'/search',
@@ -116,7 +124,25 @@ export default [
     component: GeneralThings,
     meta: {
       showFooter: true
-    }
+    },
+    children: [
+      {
+        path: '/generalthings/discover',
+        component: Discover,
+        meta: {
+          showFooter: true
+        }
+      },
+      {
+        path: '/generalthings/selection',
+        component: Selection
+      },
+      {
+        path: '/',
+        redirect: '/generalthings/discover'
+      }
+    ]
+
   },
   {
     path: '/shopcart',
@@ -127,7 +153,15 @@ export default [
   },
   {
     path: '/personal',
-    component: Personal
+    component: Personal,
+  },
+  {
+    path: '/phonelogin',
+    component: PhoneLogin
+  },
+  {
+    path: '/pwdlogin',
+    component: PwdLogin
   },
   {
     path: '/',
