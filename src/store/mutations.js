@@ -3,10 +3,15 @@
 */
 import {
   RECEIVE_HOMEDATA,
+  RECEIVE_REQCATEGORYDATA
 }from './mutation-types'
 
 export default {
-  [RECEIVE_HOMEDATA](state,{homeData}){
+  [RECEIVE_HOMEDATA](state,homeData){
     state.homeData = homeData
+  },
+  [RECEIVE_REQCATEGORYDATA](state,categoryData){
+
+    state.categoryData = categoryData
   },
 }

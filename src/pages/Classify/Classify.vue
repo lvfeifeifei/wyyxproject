@@ -1,7 +1,7 @@
 <template>
   <div class="classifyContainer">
     <header class="head">
-      <div class="search">
+      <div class="search" @click="$router.push('/search')">
         <img src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-553dba3aff.png" alt="">
         <span>搜索商品, 共22110款好物</span>
       </div>
@@ -10,62 +10,21 @@
       <div class="leftNav">
         <div class="listContainer">
           <ul class="ulList">
-            <li class="active">周年庆专区</li>
-            <li>春夏专区</li>
-            <li>爆品专区</li>
-            <li>新品专区</li>
-            <li>居家生活</li>
-            <li>服饰鞋包</li>
-            <li>美食酒水</li>
-            <li>个护清洁</li>
-            <li>母婴亲子</li>
-            <li>运动旅行</li>
-            <li>数码家电</li>
-            <li>全球特色</li>
+            <li :class="{active:categoryL1List[curIndex]===item}"
+                v-for="(item,index) in categoryL1List"
+                @click="addClass(index)" :key="index">{{item.name}}</li>
           </ul>
         </div>
       </div>
       <div class="rightList">
         <div class="rightDetail">
-          <div class="scrollBox">
-            <div class="image"></div>
+          <div class="scrollBox" v-if="categoryL1List[curIndex]">
+            <img :src="categoryL1List[curIndex].wapBannerUrl" class="image" alt="">
             <div class="bottomContent">
-              <ul class="list">
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
-                </li>
-                <li>
-                  <img src="http://yanxuan.nosdn.127.net/35d4b6b281f7ab4c5524e8d1c317dd1d.png?imageView&quality=85&thumbnail=144x144" alt="">
-                  <p>9.9元最高抵399</p>
+              <ul class="list" >
+                <li v-for="(subcate,index) in categoryL1List[curIndex].subCateList" :key="index">
+                  <img :src="subcate.bannerUrl" alt="">
+                  <p>{{subcate.name}}</p>
                 </li>
               </ul>
             </div>
@@ -74,30 +33,63 @@
       </div>
     </div>
   </div>
-  
+
 
 </template>
 <script>
   import BScroll from 'better-scroll'
+  
+  import {mapState} from 'vuex'
   export default {
+    data () {
+      return {
+        categoryL1List:[],
+        curIndex:0
+      }
+    },
+    methods:{
+      addClass (index) {//当点击的curIndex == index时添加active。把curIndex定义为状态，更新为index
+        this.curIndex = index
+      }
+    },
     mounted () {
-      new BScroll('.listContainer',{
-        scrollY:true,
-        click:true
+      this.$store.dispatch('getCategoryData',()=>{
+        this.$nextTick(()=>{
+          new BScroll('.listContainer',{
+            scrollY:true,
+            click:true
+          })
+          new BScroll('.rightDetail',{
+            scrollY:true,
+            click:true
+          })
+        })
       })
-      new BScroll('.rightDetail',{
-        scrollY:true,
-        click:true
+    },
+    computed: {
+      ...mapState({
+        categoryData:state=>state.categoryData
       })
+    },
+    watch: {
+      categoryData (newValue) {
+        this.categoryL1List = newValue.categoryL1List
+        
+      }
     }
+    
+    
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .classifyContainer
+    position relative
     width 750px
     height 1334px
     .head
-      position relative
+      position fixed
+      left 0
+      top 0
       z-index 20
       background white
       width 750px
@@ -121,9 +113,10 @@
           height 28px
           margin-right 5px
     .classifyContent
+      margin-top 88px
       display flex
       width 750px
-      height 1148px
+      height 1060px
       .leftNav
         width 162px
         height 1148px
@@ -158,15 +151,13 @@
             .image
               width 528px
               height 192px
-              background-image url("http://yanxuan.nosdn.127.net/d574677c2dede0bf7a8376cc07fa5f64.jpg?imageView&thumbnail=0x196&quality=75")
-              background-size 100% 100%
             .bottomContent
               .list
                 margin-top 30px
                 display flex
-                justify-content space-around
                 flex-wrap wrap
                 li
+                  margin 0 13px
                   img
                     width 144px
                     height 144px
@@ -176,6 +167,6 @@
                     text-align center
                     font-size 24px
                     height 72px
-              
-          
+
+
 </style>

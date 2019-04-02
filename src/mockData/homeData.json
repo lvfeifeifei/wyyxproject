@@ -2,17 +2,17 @@
   "component1": "-----------------服务策略-----------------",
   "policyDescList": [
     {
-      "icon": "http://yanxuan.nosdn.127.net/cae45612b8aae577d8bd73338e2fc02c.png",
+      "icon": "http://yanxuan.nosdn.127.net/a03dd909803b9ac032eba58b7253a2f6.png",
       "schemeUrl": "",
       "desc": "网易自营品牌"
     },
     {
-      "icon": "http://yanxuan.nosdn.127.net/cae45612b8aae577d8bd73338e2fc02c.png",
+      "icon": "http://yanxuan.nosdn.127.net/2d0402ffcd52b3ec3b07422681c42a89.png",
       "schemeUrl": "",
       "desc": "30天无忧退货"
     },
     {
-      "icon": "http://yanxuan.nosdn.127.net/cae45612b8aae577d8bd73338e2fc02c.png",
+      "icon": "http://yanxuan.nosdn.127.net/eb61ee48e8942dbd1784c9ee75ebe955.png",
       "schemeUrl": "",
       "desc": "48小时快速退款"
     }
@@ -984,95 +984,6 @@
       "counterPrice": 99,
       "couponPrice": 0,
       "retailPrice": 99,
-      "status": 2
-    },
-    {
-      "scenePicUrl": "http://yanxuan.nosdn.127.net/8a417912a5744a0b5dc1c088091a821d.png",
-      "listPicUrl": "http://yanxuan.nosdn.127.net/c154d31dafdb5f3b8f8733a568941207.png",
-      "tagId": 1080000,
-      "simpleDesc": "高浓度VC精华注入安瓶，强效抗氧化",
-      "primarySkuPreSellPrice": 0,
-      "limitedFlag": 0,
-      "newItemFlag": true,
-      "itemTagList": [
-        {
-          "itemId": 0,
-          "tagId": 0,
-          "name": "新品",
-          "subType": 0,
-          "forbidJump": false,
-          "type": 1
-        }
-      ],
-      "primarySkuPreSellStatus": 0,
-      "pieceNum": 0,
-      "extra": {
-        "resource": {
-          "materialType": "商品id",
-          "materialId": "49247281",
-          "itemId": "3447007",
-          "materialName": "西班牙制造 高浓VC保湿抗皱安瓶",
-          "taskType": 1,
-          "crmUserGroupName": "无分组",
-          "resourcesId": 7,
-          "itemIdList": [
-            "3447007"
-          ],
-          "crmUserGroupId": "0",
-          "taskId": "48486611"
-        },
-        "modelType": 1
-      },
-      "id": 3447007,
-      "sellVolume": 618,
-      "isCouponConflict": false,
-      "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/8a417912a5744a0b5dc1c088091a821d.png",
-      "tagName": "海外制造商",
-      "pieceUnitDesc": "件",
-      "resourcesId": 0,
-      "name": "西班牙制造 高浓VC保湿抗皱安瓶",
-      "productPlace": "西班牙制造",
-      "counterPrice": 289,
-      "couponPrice": 0,
-      "retailPrice": 289,
-      "status": 2
-    },
-    {
-      "scenePicUrl": "http://yanxuan.nosdn.127.net/ea0e251fade62c4b2e9b4eae61f6bc71.jpg",
-      "listPicUrl": "http://yanxuan.nosdn.127.net/a652860d8db5199be9c1b4e761f0fee3.png",
-      "tagId": 0,
-      "simpleDesc": "物理摩擦，轻松去污",
-      "primarySkuPreSellPrice": 0,
-      "limitedFlag": 0,
-      "newItemFlag": true,
-      "itemTagList": [
-        {
-          "itemId": 0,
-          "tagId": 0,
-          "name": "新品",
-          "subType": 0,
-          "forbidJump": false,
-          "type": 1
-        }
-      ],
-      "primarySkuPreSellStatus": 0,
-      "pieceNum": 4,
-      "extra": {
-        "modelType": 3
-      },
-      "id": 1598005,
-      "sellVolume": 18802,
-      "isCouponConflict": false,
-      "colorNum": 0,
-      "primaryPicUrl": "http://yanxuan.nosdn.127.net/0794fc798e92353c8d26fe2c590eeb8a.png",
-      "pieceUnitDesc": "片",
-      "resourcesId": 0,
-      "name": "纳米清洁多用擦",
-      "productPlace": "",
-      "counterPrice": 12.9,
-      "couponPrice": 0,
-      "retailPrice": 12.9,
       "status": 2
     }
   ],
