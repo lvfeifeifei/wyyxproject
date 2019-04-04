@@ -27,10 +27,9 @@
       }
     },
     computed:{
-      ...mapState(['homeData'])
-    },
-    watch: {
-    
+      ...mapState({
+        homeData:state=>state.firstPage.homeData
+      })
     }
   }
 </script>

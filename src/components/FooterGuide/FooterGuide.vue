@@ -12,7 +12,7 @@
       </span>
       <span class="footer_title">分类</span>
     </a>
-    <a href="javascript:;" class="footer_item" :class="{on: $route.path==='/generalthings'}"  @click="goto('/generalthings')">
+    <a href="javascript:;" class="footer_item" :class="{on: $route.path.indexOf('/generalthings')===0}"  @click="goto('/generalthings')">
       <span class="footer_icon">
         <i class="iconfont iconshiwu"></i>
       </span>

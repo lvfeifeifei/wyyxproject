@@ -1,15 +1,7 @@
 <template>
   <div class="recommendContainer">
     <!--轮播-->
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="../../../../static/imgs/1.jpg" alt="">
-        </div>
-      </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
-    </div>
+    <Swiper/>
     <!--服务列表-->
     <ServerList/>
     <div class="container">
@@ -170,424 +162,7 @@
         </ul>
     
       </div>
-      <div class="categoryModule">
-        <div class="categoryItem">
-          <img src="../../../../static/imgs/1.jpg" alt="">
-          <div class="categoryList">
-            <ul>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">￥440</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <div class="moreProduct">
-                  <span class="lookMore">查看更多 ></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="categoryItem">
-          <img src="../../../../static/imgs/1.jpg" alt="">
-          <div class="categoryList">
-            <ul>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">￥440</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <div class="moreProduct">
-                  <span class="lookMore">查看更多 ></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="categoryItem">
-          <img src="../../../../static/imgs/1.jpg" alt="">
-          <div class="categoryList">
-            <ul>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">￥440</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <div class="moreProduct">
-                  <span class="lookMore">查看更多 ></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="categoryItem">
-          <img src="../../../../static/imgs/1.jpg" alt="">
-          <div class="categoryList">
-            <ul>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">￥440</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <p class="price">
-                    <span>￥254</span>
-                    <span style="text-decoration: line-through;color:#999">￥299</span>
-                  </p>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-                <div class="product">
-                  <span class="detail">网易智造N520除螨吸尘器</span>
-                  <span class="price">￥440</span>
-                </div>
-                <div class="status">
-                  <p>爆品</p>
-                  <p>限时购</p>
-                </div>
-              </li>
-              <li>
-                <div class="moreProduct">
-                  <span class="lookMore">查看更多 ></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <CategoryModule/>
       <div class="footerBox">
         <div class="topLink">
           <a href="javascript:;">下载APP</a>
@@ -603,63 +178,54 @@
   </div>
 </template>
 <script>
-    import BScroll from 'better-scroll'
-    import NoTitleList from '../../../components/NoTitleList/NoTitleList.vue'
-    import ServerList from '../components/ServerList/ServerList.vue'
-    import Categorys from '../components/Categorys/Categorys.vue'
-    import TimeToBuy from '../components/TimeToBuy/TimeToBuy.vue'
-    import NewProducts from '../components/NewProducts/NewProducts.vue'
-    import BestPopular from '../components/BestPopular/BestPopular.vue'
-    import {reqHomeData} from '../../../api'
-    import {mapState} from 'vuex'
-    export default {
-      data (){
-        return {
-          kingKongModule:{}
-        }
-      },
-      components: {
-        NoTitleList,
-        ServerList,
-        Categorys,
-        TimeToBuy,
-        NewProducts,
-        BestPopular,
-      },
-      mounted () {
-        this.$store.dispatch('getHomeData',()=>{
-          this.$nextTick(()=>{
-            new BScroll('.left',{
-              scrollX: true,
-              click:true
-            })
-            new BScroll('.categoryList',{
-              scrollX: true,
-              click:true
-            })
+  import Swiper from '../components/Swiper/Swiper.vue'
+  import BScroll from 'better-scroll'
   
+  import NoTitleList from '../../../components/NoTitleList/NoTitleList.vue'
+  import ServerList from '../components/ServerList/ServerList.vue'
+  import Categorys from '../components/Categorys/Categorys.vue'
+  import TimeToBuy from '../components/TimeToBuy/TimeToBuy.vue'
+  import NewProducts from '../components/NewProducts/NewProducts.vue'
+  import BestPopular from '../components/BestPopular/BestPopular.vue'
+  import CategoryModule from '../components/CategoryModule/CategoryModule.vue'
+  
+  import {mapState} from 'vuex'
+  export default {
+    data (){
+      return {
+        kingKongModule:{},
+      }
+    },
+    components: {
+      NoTitleList,
+      ServerList,
+      Categorys,
+      TimeToBuy,
+      NewProducts,
+      BestPopular,
+      CategoryModule,
+      Swiper
+    },
+    mounted () {
+      this.$store.dispatch('getHomeData',()=>{
+        this.$nextTick(()=>{
+          new BScroll('.left',{
+            scrollX: true,
+            click:true
           })
         })
-  
-      },
-      watch: {
-        homeData (newValue) {
-        }
-      }
-    }
+      })
+    },
+    computed: {
+      ...mapState({
+        homeData: state=>state.firstPage.homeData
+      })
+    },
+  }
   
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .recommendContainer
-    /*轮播*/
-    .swiper-container
-      margin-top 150px
-      .swiper-wrapper
-        .swiper-slide
-          img
-            width 100%
-            height 400px
-    
     .container
       width 750px
       height 6500px
@@ -814,9 +380,6 @@
                 height 120px
                 width 120px
       
-      
-      
-      
       .noTitleList
         width 100%
         height 576px
@@ -846,57 +409,6 @@
                 img
                   width 150px
                   height 150px
-      
-      .categoryModule
-        background #f4f4f4
-        margin-top 20px
-        width 100%
-        height 3200px
-        .categoryItem
-          margin-bottom 20px
-          width 750px
-          background white
-          height 781px
-          img
-            width 750px
-            height 370px
-          .categoryList
-            overflow hidden
-            height 390px
-            width 720px
-            margin-left 20px
-            box-sizing border-box
-            ul
-              display flex
-              margin 20px 30px 0 30px
-              width 2000px
-              height 100%
-              li
-                height 361px
-                width 200px
-                margin-right 20px
-                img
-                  height 200px
-                  width 200px
-                  background #f5f5f5
-                .product
-                  margin 10px 0
-                  line-height 35px
-                  .detail
-                    font-size 24px
-                    color #333
-                  .price
-                    color #b4282d
-                .status
-                  p
-                    display inline-block
-                    height 32px
-                    line-height 32px
-                    border 1px solid red
-                    border-radius 15px
-                    color red
-                    padding 2px 15px
-      
       
       .footerBox
         width 750px

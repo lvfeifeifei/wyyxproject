@@ -40,7 +40,9 @@
       console.log(this.searchContent);
     },
     computed:{
-      ...mapState(['searchList'])
+      ...mapState({
+        searchList:state=>state.classify.searchList
+      })
     },
     watch:{
       searchList (newValue) {

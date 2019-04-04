@@ -68,7 +68,7 @@
     },
     computed: {
       ...mapState({
-        categoryData:state=>state.categoryData
+        categoryData:state=>state.classify.categoryData
       })
     },
     watch: {

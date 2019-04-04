@@ -1,8 +1,4 @@
-/*
-包含n个数据的状态对象
-*/
-export default {
-  homeData:{},
-  categoryData: {},
-  searchList:{}
-}
+/**
+ * Created by Administrator on 2019/4/4 0004.
+ */
+

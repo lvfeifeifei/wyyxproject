@@ -6,7 +6,7 @@
       </div>
       <div class="middle">
         <span class="discover" @click="goto('/generalthings/discover')"
-              :class="{active:$route.path==='/generalthings/discover'}">发现</span>
+              :class="{active:$route.path.includes('/generalthings/discover')}">发现</span>
         <span @click="goto('/generalthings/selection')"
               :class="{active:$route.path==='/generalthings/selection'}"
         >甄选家</span>
@@ -39,6 +39,10 @@
   .thingsContainer
     background #f4f4f4
     .container
+      position fixed
+      top 0
+      left 0
+      background white
       padding 0 30px
       box-sizing border-box
       width 100%

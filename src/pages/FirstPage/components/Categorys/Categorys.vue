@@ -11,7 +11,9 @@
   import {mapState} from 'vuex'
   export default {
     computed: {
-      ...mapState(['homeData'])
+      ...mapState({
+        homeData:state=>state.firstPage.homeData
+      })
       
     }
   }

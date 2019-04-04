@@ -3,17 +3,23 @@
     <Header/>
     <div class="loginContainer">
       <img class="logo" src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
-      <form class="checkLogin">
-        <input type="text" class="writePhone" placeholder="请输入手机号">
+      <div class="checkLogin">
+        <input type="text" class="writePhone" placeholder="请输入手机号" v-model="user.phone">
         <div class="messageCode">
-          <input type="text" placeholder="请输入密码">
+          <input type="tel" placeholder="请输入密码" v-model="user.pwd">
         </div>
+        <label class="input_phone">
+          <div class="login_tips">
+            <p>{{promotMsg}}</p>
+            <p>{{promotPwd}}</p>
+          </div>
+        </label>
         <div class="pwdLogin">
           <span class="left">忘记密码？</span>
           <span class="right" @click="$router.replace('/phonelogin')">使用短信验证登录</span>
         </div>
-        <div class="loginWays">
-          <span @click="$router.push('/phonelogin')">登录</span>
+        <div class="loginWays" @click="toLogin">
+          <span>登录</span>
         </div>
         <div class="otherLoginWays">
           <span class="emailFont">其他登录方式</span>
@@ -22,12 +28,50 @@
           <span>注册账号</span>
           <i class="iconfont iconchevron-copy-copy"></i>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  import {MessageBox} from 'mint-ui'
+  export default {
+    data () {
+      return {
+        user:{
+          phone: '',
+          pwd: '',
+        },
+        promotMsg:'',
+        promotPwd:''
+      }
+    },
+    watch: {//深度监视user对象的变化
+      user:{
+        handler(newUser){
+          if (/^1\d{10}$/.test(newUser.phone)) {
+            this.promotMsg = ''
+          }else{
+            this.promotMsg = '请输入正确的手机号'
+          }
+          
+          if (/^[0-9]{6}$/.test(newUser.pwd)) {
+            this.promotPwd = ''
+          }else{
+            this.promotPwd = '请输入正确密码'
+          }
+        }
+      },
+      deep:true
+    },
+    methods: {
+      toLogin () {
+        if(this.promotMsg==="" && this.promotPwd===""){
+          console.log("登录成功")
+        }
+      }
+    }
+  
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .container
@@ -58,7 +102,18 @@
             margin-top 15px
             height 80px
             width 100%
-        .pwdLogin
+        .input_phone
+          position relative
+        .login_tips
+          position absolute
+          left 50%
+          top -100%
+          width 50%
+          transform translateX(-50%)
+          color $themeColor
+          font-size 28px
+  
+    .pwdLogin
           width 100%
           height 100px
           line-height 100px

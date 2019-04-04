@@ -9,6 +9,9 @@ import state from './state'
 import actions from './actions'
 import mutations from './mutations'
 import getters from './getters'
+import firstPage from './modules/firstPage'
+import classify from './modules/classify'
+import things from './modules/things'
 
 
 //声明使用
@@ -18,5 +21,10 @@ export default new Vuex.Store({
   state,
   mutations,
   actions,
-  getters
+  getters,
+  modules: {
+    firstPage,
+    classify,
+    things
+  }//总的state：{firstPage：{}，classify：{}，things：{}}
 })

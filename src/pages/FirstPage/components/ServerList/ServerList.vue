@@ -1,6 +1,6 @@
 <template>
   <div class="serverList">
-    <ul class="serverUl">
+    <ul class="serverUl" v-if="homeData.policyDescList">
       <li v-for="(item,index) in homeData.policyDescList" :key="index">
         <img :src="item.icon" alt="">
         <span>{{item.desc}}</span>
@@ -12,7 +12,9 @@
   import {mapState} from 'vuex'
   export default {
     computed: {
-      ...mapState(['homeData'])
+      ...mapState({
+        homeData:state=>state.firstPage.homeData
+      })
     }
     
   }

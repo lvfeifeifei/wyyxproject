@@ -18,10 +18,11 @@ import HouseClean from '../pages/FirstPage/HouseClean/HouseClean.vue'
 import ShoesPackage from '../pages/FirstPage/ShoesPackage/ShoesPackage.vue'
 import SportsTravel from '../pages/FirstPage/SportsTravel/SportsTravel.vue'
 import SearchGoods from '../pages/Classify/SearchGoods/SearchGoods.vue'
-import PhoneLogin from '../pages/PhoneLogin/PhoneLogin.vue'
-import PwdLogin from '../pages/PwdLogin/PwdLogin.vue'
+import PhoneLogin from '../pages/Personal/PhoneLogin/PhoneLogin.vue'
+import PwdLogin from '../pages/Personal/PwdLogin/PwdLogin.vue'
 import Discover from '../pages/GeneralThings/Discover/Discover.vue'
 import Selection from '../pages/GeneralThings/Selection/Selection.vue'
+import Recommends from '../pages/GeneralThings/Discover/Recommends/Recommends.vue'
 export default [
   {
     path: '/firstpage',
@@ -131,7 +132,21 @@ export default [
         component: Discover,
         meta: {
           showFooter: true
-        }
+        },
+        children: [
+          {
+            path:'/generalthings/discover/recommends',
+            component:Recommends,
+            meta: {
+              showFooter: true
+            },
+
+          },
+          {
+            path:'/generalthings/discover',
+            redirect:'/generalthings/discover/recommends'
+          }
+        ]
       },
       {
         path: '/generalthings/selection',
@@ -139,7 +154,7 @@ export default [
       },
       {
         path: '/',
-        redirect: '/generalthings/discover'
+        redirect: '/generalthings/discover/recommends'
       }
     ]
 

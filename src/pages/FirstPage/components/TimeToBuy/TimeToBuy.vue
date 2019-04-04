@@ -28,7 +28,9 @@
       }
     },
     computed: {
-      ...mapState(['homeData'])
+      ...mapState({
+        homeData:state=>state.firstPage.homeData
+      })
     },
     watch: {
       homeData(newValue){
