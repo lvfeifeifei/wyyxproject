@@ -1,104 +1,23 @@
 <template>
   <div class="categoryModule">
-    <div class="categoryItem">
-      <img src="https://yanxuan.nosdn.127.net/fc2388e61c4e083924689c889987cc10.jpg" alt="">
-      <div class="categoryList">
+    <div class="categoryItem"  v-for="(category,index) in categoryModule" :key="index">
+      <img :src="category.titlePicUrl" alt="">
+        <div class="categoryList" :class="'change'+index">
         <ul>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
+          <li v-for="(item,index) in category.itemList" :key="index">
+            <img v-lazy="item.primaryPicUrl" :src="item.primaryPicUrl" alt="">
             <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <p class="price">￥440</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
+              <span class="detail">{{item.name}}</span>
               <p class="price">
-                <span>￥254</span>
-                <span style="text-decoration: line-through;color:#999">￥299</span>
+                <span >￥{{item.counterPrice}}</span>
+                <span style="text-decoration: line-through;color:#ccc" v-show="item.counterPrice!==item.retailPrice">￥{{item.retailPrice}}</span>
               </p>
             </div>
-            <div class="status">
-              <p>爆品</p>
-            </div>
           </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <p class="price">
-                <span>￥254</span>
-                <span style="text-decoration: line-through;color:#999">￥299</span>
-              </p>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <p class="price">
-                <span>￥254</span>
-                <span style="text-decoration: line-through;color:#999">￥299</span>
-              </p>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <p class="price">
-                <span>￥254</span>
-                <span style="text-decoration: line-through;color:#999">￥299</span>
-              </p>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <span class="price">￥440</span>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-              <p>限时购</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <span class="price">￥440</span>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-              <p>限时购</p>
-            </div>
-          </li>
-          <li>
-            <img src="http://yanxuan.nosdn.127.net/55d8d878ee00b7a59c1b45f740087c93.png?imageView&quality=65&thumbnail=330x330" alt="">
-            <div class="product">
-              <span class="detail">网易智造N520除螨吸尘器</span>
-              <span class="price">￥440</span>
-            </div>
-            <div class="status">
-              <p>爆品</p>
-              <p>限时购</p>
-            </div>
-          </li>
-          <li>
-            <div class="moreProduct">
-              <span class="lookMore">查看更多 ></span>
+          <li class="more">
+            <div class="top">
+              <span>查看更多</span>
+              <i class="iconfont iconchevron-copy-copy"></i>
             </div>
           </li>
         </ul>
@@ -110,7 +29,6 @@
 <script>
   import {mapState} from 'vuex'
   import BScroll from 'better-scroll'
-
   export default {
     data (){
       return {
@@ -119,13 +37,9 @@
     },
     mounted () {
       this.$store.dispatch('getHomeData',()=>{
-        this.$nextTick(()=>{
-          new BScroll('.categoryList',{
-            scrollX: true,
-            click:true
-          })
+        
         })
-      })
+      
     },
     computed: {
       ...mapState({
@@ -135,7 +49,24 @@
     watch: {
       homeData (newValue) {
         this.categoryModule = newValue.categoryModule
-      }
+          const arr = document.querySelectorAll(".categoryList")
+          const realArr = Array.from(arr)
+          this.$nextTick((item,index)=>{
+            realArr.map((item,index)=>{
+              console.log(index);
+              console.log(index);
+              new BScroll(`.change${index}`,{
+                scrollX: true,
+                click:true
+              })
+  
+            })
+          })
+      
+      
+      },
+  
+  
     }
   }
 </script>
@@ -144,7 +75,6 @@
     background #f4f4f4
     margin-top 20px
     width 100%
-    height 3200px
     .categoryItem
       margin-bottom 20px
       width 750px
@@ -168,6 +98,15 @@
             height 361px
             width 200px
             margin-right 20px
+            &:last-child
+              .top
+                height 200px
+                line-height 200px
+                text-align center
+                font-size 28px
+                width 200px
+                background #f5f5f5
+  
             img
               height 200px
               width 200px

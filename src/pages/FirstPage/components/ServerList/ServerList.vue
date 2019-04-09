@@ -2,7 +2,7 @@
   <div class="serverList">
     <ul class="serverUl" v-if="homeData.policyDescList">
       <li v-for="(item,index) in homeData.policyDescList" :key="index">
-        <img :src="item.icon" alt="">
+        <img  :src="item.icon" alt="">
         <span>{{item.desc}}</span>
       </li>
     </ul>

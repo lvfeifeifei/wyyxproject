@@ -16,5 +16,6 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .firstContainer
     position relative
+    height 100%
     background-color #f4f4f4
 </style>

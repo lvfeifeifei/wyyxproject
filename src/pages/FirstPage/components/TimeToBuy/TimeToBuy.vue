@@ -9,7 +9,7 @@
     </div>
     <ul class="TimeList">
       <li v-for="(item,index) in flashSaleModule.itemList" :key="item.itemId">
-        <img :src="item.picUrl" alt="">
+        <img v-lazy="item.picUrl" :src="item.picUrl" alt="">
         <div class="productPrice">
           <span>￥{{item.activityPrice}}</span>
           <span>￥{{item.originPrice}}</span>

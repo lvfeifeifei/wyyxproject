@@ -35,17 +35,18 @@ const actions = {
       const thingsNavList = result.data
       // console.log(thingsNavList,'reqThingsNavList()')
       commit(RECEIVE_REQTHINGSNAVLIST,thingsNavList)
+
     }
   },
 
   //获取识物页面推荐数据
-  async getThingsRecManual ({commit}) {
+  async getThingsRecManual ({commit},callback) {
     const result = await reqThingsRecManual()
     if(result.code==='200'){
       const recManual = result.data
       // console.log(recManual,'reqThingsRecManual()')
       commit(RECEIVE_THINGSRECMANUAL,recManual)
-
+      typeof callback === 'function' && callback()
     }
   }
 

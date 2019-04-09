@@ -23,7 +23,7 @@
             <div class="bottomContent">
               <ul class="list" >
                 <li v-for="(subcate,index) in categoryL1List[curIndex].subCateList" :key="index">
-                  <img :src="subcate.bannerUrl" alt="">
+                  <img v-lazy="subcate.bannerUrl" :src="subcate.bannerUrl" alt="">
                   <p>{{subcate.name}}</p>
                 </li>
               </ul>

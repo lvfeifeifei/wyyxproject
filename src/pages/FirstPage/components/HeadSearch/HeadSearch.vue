@@ -51,13 +51,13 @@
 
 </template>
 <script>
+  import BScroll from 'better-scroll'
   export default {
     data () {
       return {
         is_open:false,
       }
     },
-  
     methods: {
       toggole () {
         this.is_open = !this.is_open
@@ -68,6 +68,12 @@
       }
     
     },
+    mounted() {
+        new BScroll('.left',{
+          click:true,
+          scrollX:true
+        })
+    }
   
   }
 </script>
@@ -78,6 +84,7 @@
     top 0
     z-index 50
     .head
+      margin-bottom -2px
       width 100%
       display flex
       align-items center

@@ -4,7 +4,7 @@
     <div class="loginContainer">
       <img class="logo" src="http://yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
       <form class="checkLogin">
-        <input type="text" class="writePhone" placeholder="请输入手机号">
+        <input type="text" class="writePhone" placeholder="请输入手机号" v-model="phone">
         <div class="messageCode">
           <input type="text" placeholder="请输入短信验证码">
           <div class="btn">获取验证码</div>
@@ -28,7 +28,13 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    data () {
+      return {
+        phone:''
+      }
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .container

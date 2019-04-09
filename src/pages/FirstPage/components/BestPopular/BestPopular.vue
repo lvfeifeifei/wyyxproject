@@ -7,7 +7,7 @@
     
     <ul class="popular_goods" v-if="homeData.popularItemList">
       <li v-for="(item, index) in homeData.popularItemList" :key="index">
-        <img  :src="item.primaryPicUrl" alt="人气推荐">
+        <img v-lazy="item.primaryPicUrl" :src="item.primaryPicUrl" alt="人气推荐">
         <div class="popular_info">
           <span class="popular_name">{{index===0?item.name:
             (item.name.length > 14 ? (item.name.slice(0, 14) + '...') : item.name)}}</span><br v-if="index===0"/>

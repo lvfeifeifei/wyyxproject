@@ -11,7 +11,7 @@
                 <span class="nickname">{{topic.nickname}}</span>
               </div>
               <span class="title">这些爆品火到断货，好不容易补到一批上架了！</span>
-              <img class="bottomImg" :src="topic.picUrl" alt="">
+              <img class="bottomImg" v-lazy="topic.picUrl" :src="topic.picUrl" alt="">
               <div class="watchCount">
                 <i class="iconfont"></i>
                 <span>10.1k人看过</span>
@@ -44,6 +44,7 @@
   </div>
 </template>
 <script>
+  import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
   export default {
     data () {
@@ -51,9 +52,16 @@
       
       }
     },
-    
     mounted () {
-      this.$store.dispatch('getThingsRecManual')
+      this.$store.dispatch('getThingsRecManual',()=>{
+        this.$nextTick(()=>{
+          new BScroll('.recommendsContainer',{
+            scrollY:true,
+            click:true
+  
+          })
+        })
+      })
     },
     computed: {
       ...mapState({

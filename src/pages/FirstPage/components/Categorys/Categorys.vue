@@ -1,7 +1,7 @@
 <template>
   <ul class="categorys" v-if="homeData.kingKongModule">
     <li v-for="(item,index) in homeData.kingKongModule.kingKongList" :key="index">
-      <img :src="item.picUrl" alt="">
+      <img v-lazy="item.picUrl" :src="item.picUrl" alt="">
       <span>{{item.text}}</span>
     </li>
   </ul>
